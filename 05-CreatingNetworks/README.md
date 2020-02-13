@@ -17,7 +17,7 @@
     * The `:5.7.25` specifies the version of the image we want to use.
     * The `-e` option will set an environment variable on the container with the supplied key/value pair.
     * Note how we don't expose a port here at all.
-* Run `docker run --name adminer -p 8080:8080 adminer -d` on your terminal
+* Run `docker run --name adminer -p 8080:8080 -d adminer` on your terminal
 * At this point, we should have adminer running at `http://localhost:8080/`, but nowhere it can connect to. We can verify this with `docker ps` and by using a browser to check adminer works.
 * Note that trying to login to the MySQL server via adminer using `db` as the server, `root` as the user, and `hunter2` as the password does not work at this point.
 * Run `docker network connect --alias db mysqlnet mysql-server`.
